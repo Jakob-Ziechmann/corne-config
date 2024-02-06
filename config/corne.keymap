@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 
 / {
     combos {
@@ -35,7 +34,7 @@
         harpoon: harpoon {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kp ESCAPE &kt LEFT_SHIFT &macro_param_1to1 &kp MACRO_PLACEHOLDER &to 0>;
+            bindings = <&kp ESCAPE &sk LC(LEFT_SHIFT) &macro_param_1to1 &kp MACRO_PLACEHOLDER &to 0>;
             label = "harpoon";
         };
     };

@@ -34,7 +34,7 @@
         harpoon: harpoon {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kp ESCAPE &sk LA(LEFT_CONTROL) &macro_param_1to1 &kp MACRO_PLACEHOLDER &to 0>;
+            bindings = <&kp ESCAPE &sk LS(LEFT_CONTROL) &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "harpoon";
         };
     };

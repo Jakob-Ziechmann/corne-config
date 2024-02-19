@@ -27,7 +27,7 @@
         harpoon: harpoon {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&kp ESCAPE &sk LS(LEFT_CONTROL) &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&kp ESCAPE &sk LEFT_CONTROL &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "harpoon";
         };
 
@@ -75,7 +75,7 @@
             display-name = "control";
             bindings = <
 &kp TAB           &kp N1      &kp N2      &kp N3      &kp N4      &kp N5        &kp N6     &kp N7    &kp N8        &kp N9    &kp N0           &kp BSPC
-&kp LEFT_CONTROL  &harpoon D  &harpoon C  &harpoon B  &harpoon A  &harpoon O    &none      &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp DELETE
+&kp LEFT_CONTROL  &harpoon S  &harpoon N  &harpoon T  &harpoon H  &harpoon E    &none      &kp LEFT  &kp UP_ARROW  &kp DOWN  &kp RIGHT_ARROW  &kp DELETE
 &kp LSHFT         &none       &none       &none       &none       &none         &none      &kp H     &kp K         &kp J     &kp L            &none
                                           &kp LGUI    &trans      &kp ENTER     &kp SPACE  &trans    &kp RALT
             >;

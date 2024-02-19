@@ -18,24 +18,31 @@
         };
 
         hardware_layer {
-            bindings = <&os_l4>;
+            bindings = <&to 4>;
             key-positions = <24 35>;
         };
     };
 
     macros {
-        os_l4: os_l4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sl 4>;
-            label = "OS_L4";
-        };
-
         harpoon: harpoon {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&kp ESCAPE &sk LS(LEFT_CONTROL) &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "harpoon";
+        };
+
+        single_shot: single_shot {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "SINGLE_SHOT";
+        };
+
+        to0: to0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>;
+            label = "TO0";
         };
     };
 
@@ -53,7 +60,7 @@
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B      &kp J      &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BSPC
 &kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp G      &kp M      &kp N  &kp E      &kp I    &kp O          &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V      &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH       &kp ESC
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V      &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH       &single_shot ESCAPE
                          &kp LGUI  &mo 1  &kp RET    &kp SPACE  &sl 2  &kp RALT
             >;
         };
@@ -78,16 +85,16 @@
             bindings = <
 &kp TAB  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH       &kp LEFT_BRACE        &kp PERCENT    &kp AMPERSAND   &kp RIGHT_BRACE        &kp CARET         &kp EQUAL  &none          &kp BACKSPACE
 &none    &kp PIPE         &kp ASTERISK  &kp PLUS       &kp LEFT_PARENTHESIS  &kp DOLLAR     &kp DOLLAR      &kp RIGHT_PARENTHESIS  &kp MINUS         &kp SLASH  &kp BACKSLASH  &kp GRAVE
-&none    &none            &none         &kp LESS_THAN  &kp LEFT_BRACKET      &kp TILDE      &kp UNDERSCORE  &kp RIGHT_BRACKET      &kp GREATER_THAN  &none      &none          &to 0
+&none    &none            &none         &kp LESS_THAN  &kp LEFT_BRACKET      &kp TILDE      &kp UNDERSCORE  &kp RIGHT_BRACKET      &kp GREATER_THAN  &none      &none          &to0
                                         &kp LEFT_GUI   &trans                &kp RETURN     &kp SPACE       &trans                 &none
             >;
         };
 
         numpad {
             bindings = <
-&kp TAB  &kp EXCLAMATION  &kp SLASH     &kp MINUS  &kp CARET             &kp PERCENT              &none                  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none  &kp BACKSPACE
+&kp TAB  &kp EXCLAMATION  &kp SLASH     &kp MINUS  &kp CARET             &kp PERCENT              &kp KP_NUMLOCK         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none  &kp BACKSPACE
 &none    &none            &kp ASTERISK  &kp PLUS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none  &none
-&none    &none            &none         &none      &none                 &none                    &none                  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none  &to 0
+&none    &none            &none         &none      &none                 &none                    &none                  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none  &to0
                                         &trans     &trans                &kp RETURN               &kp KP_NUMBER_0        &kp PERIOD       &none
             >;
         };
@@ -96,7 +103,7 @@
             bindings = <
 &trans  &none         &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &bt BT_CLR
 &trans  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &to 0
+&trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &to0
                                     &trans        &trans        &trans    &trans  &trans  &trans
             >;
         };

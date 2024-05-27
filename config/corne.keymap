@@ -18,6 +18,12 @@
             bindings = <&to 3>;
             key-positions = <24 35>;
         };
+
+        repeat_key {
+            bindings = <&key_repeat>;
+            key-positions = <41>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -82,7 +88,7 @@
             bindings = <
 &kp TAB  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH       &kp LEFT_BRACE        &kp PERCENT    &kp AMPERSAND  &kp RIGHT_BRACE        &kp CARET         &kp EQUAL  &none          &kp BACKSPACE
 &none    &kp PIPE         &kp ASTERISK  &kp PLUS       &kp LEFT_PARENTHESIS  &kp DOLLAR     &kp DOLLAR     &kp RIGHT_PARENTHESIS  &kp MINUS         &kp SLASH  &kp BACKSLASH  &kp GRAVE
-&none    &none            &none         &kp LESS_THAN  &kp LEFT_BRACKET      &kp UNDER      &kp TILDE      &kp RIGHT_BRACKET      &kp GREATER_THAN  &none      &none          &to0
+&none    &none            &none         &kp LESS_THAN  &kp LEFT_BRACKET      &kp TILDE      &kp UNDER      &kp RIGHT_BRACKET      &kp GREATER_THAN  &none      &none          &to0
                                         &kp LEFT_GUI   &trans                &kp RETURN     &kp SPACE      &trans                 &none
             >;
         };

@@ -18,12 +18,6 @@
             bindings = <&to 3>;
             key-positions = <24 35>;
         };
-
-        repeat_key {
-            bindings = <&key_repeat>;
-            key-positions = <41>;
-            layers = <0>;
-        };
     };
 
     macros {

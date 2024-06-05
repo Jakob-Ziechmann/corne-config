@@ -18,6 +18,13 @@
             bindings = <&to 3>;
             key-positions = <24 35>;
         };
+
+        ing_combo {
+            bindings = <&none>;
+            key-positions = <21 19 17>;
+            layers = <4>;
+            timeout-ms = <200>;
+        };
     };
 
     macros {
@@ -41,6 +48,55 @@
             bindings = <&to 0>;
             label = "TO0";
         };
+
+        m_ing: m_ing {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp N &kp G>;
+            label = "M_ING";
+        };
+
+        m_tion: m_er {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp I &kp O &kp N>;
+            label = "M_ER";
+        };
+
+        m_con: m_con {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp O &kp N>;
+            label = "M_CON";
+        };
+
+        m_ter: m_ter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp E &kp R>;
+            label = "M_TER";
+        };
+
+        m_com: m_com {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C &kp O &kp M>;
+            label = "M_COM";
+        };
+
+        m_per: per {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp E &kp R>;
+            label = "PER";
+        };
+
+        m_pro: m_pro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp R &kp O>;
+            label = "M_PRO";
+        };
     };
 
     keymap {
@@ -55,10 +111,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B      &kp J      &kp L  &kp U             &kp Y    &kp SEMICOLON  &kp BACKSPACE
-&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp G      &kp M      &kp N  &kp E             &kp I    &kp O          &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V      &kp K      &kp H  &kp COMMA         &kp DOT  &kp FSLH       &kp ESCAPE
-                         &kp LGUI  &mo 1  &kp RET    &kp SPACE  &sl 2  &kp LEFT_CONTROL
+&kp TAB    &kp Q  &kp W  &kp F     &kp P  &kp B      &kp J      &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp BACKSPACE
+&kp LCTRL  &kp A  &kp R  &kp S     &kp T  &kp G      &kp M      &kp N  &kp E      &kp I    &kp O          &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp D  &kp V      &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH       &kp ESCAPE
+                         &kp LGUI  &mo 1  &kp RET    &kp SPACE  &sl 2  &mo 4
             >;
         };
 
@@ -93,6 +149,15 @@
 &trans  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &to0
                                     &trans        &trans        &trans    &trans  &trans  &trans
+            >;
+        };
+
+        chording {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
